@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anai Morales | Luxury Realtor® | Wealth Begins at Home™</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black-luxe: #0E0E0E;
+            --porcelain: #FAF8F6;
+            --bone: #F3EFEA;
+            --warm-taupe: #C8B9A6;
+            --champagne: #D4C29E;
+            --white: #FFFFFF;
+            --text-primary: #131313;
+            --text-secondary: #2A2A2A;
+            --text-muted: #6B6256;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: var(--text-primary);
+            background-color: var(--porcelain);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Header Social Icons */
+        .header-social {
+            position: fixed;
+            top: 16px;
+            right: 140px;
+            z-index: 1000;
+            display: flex;
+            gap: 12px;
+        }
+
+        .header-social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 1px solid var(--warm-taupe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 220ms ease;
+            backdrop-filter: blur(6px);
+        }
+
+        .header-social-icon:hover {
+            background: var(--black-luxe);
+            border-color: var(--black-luxe);
+        }
+
+        .header-social-icon:hover svg {
+            stroke: var(--white);
+        }
+
+        .header-social-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--text-primary);
+            transition: stroke 220ms ease;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 16px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--white);
+            padding: 6px 18px;
+            border-radius: 8px;
+            border: 1px solid var(--warm-taupe);
+            display: flex;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 500;
+            backdrop-filter: blur(6px);
+        }
+
+        .lang-toggle button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-primary);
+            opacity: 0.6;
+            transition: opacity 220ms ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .lang-toggle button.active {
+            opacity: 1;
+        }
+
+        .lang-toggle button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--champagne);
+        }
+
+        .lang-toggle button:hover {
+            opacity: 0.9;
+        }
+
+        .lang-toggle button:focus {
+            outline: 1.5px solid var(--champagne);
+            outline-offset: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 56px;
+            padding: 60px 48px 40px;
+            background: var(--porcelain);
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 520px;
+            background: var(--bone);
+            border-radius: 12px;
+            border: 1px solid rgba(200, 185, 166, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 400;
+            opacity: 0;
+            animation: fadeInUp 360ms ease-out forwards;
+            position: relative;
+            padding: 48px;
+            letter-spacing: 0.03em;
+            overflow: hidden;
+        }
+
+        .hero-image-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-style: italic;
+            font-weight: 500;
+            color: var(--black-luxe);
+            text-align: center;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-image-subtext {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--warm-taupe);
+            text-align: center;
+            margin-top: 16px;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-content {
+            max-width: 520px;
+            opacity: 0;
+            animation: fadeInUp 360ms ease-out 60ms forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 18px;
+            line-height: 1.15;
+            color: var(--text-primary);
+        }
+
+        .tagline {
+            font-size: 10px;
+            color: var(--warm-taupe);
+            margin-bottom: 24px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+            font-variant: small-caps;
+        }
+
+        .hero-intro {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .hero-welcome {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+            color: var(--text-muted);
+            font-weight: 400;
+            font-style: italic;
+            padding: 20px 24px;
+            background: var(--bone);
+            border-left: 2px solid var(--champagne);
+            border-radius: 4px;
+        }
+
+        .brand-signal {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 220ms ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            letter-spacing: 0.01em;
+            position: relative;
+        }
+
+        .btn-primary {
+            background-color: var(--black-luxe);
+            color: var(--white);
+            border: 1px solid var(--black-luxe);
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            right: 50%;
+            height: 1px;
+            background: var(--champagne);
+            transition: all 220ms ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:hover::after {
+            left: 28px;
+            right: 28px;
+        }
+
+        .btn-primary:focus {
+            outline: 1.5px solid var(--champagne);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--warm-taupe);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--porcelain);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary:focus {
+            outline: 1.5px solid var(--champagne);
+            outline-offset: 2px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 48px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 360ms ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 48px;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            position: relative;
+            padding-bottom: 24px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 1px;
+            background: var(--champagne);
+            opacity: 0;
+            animation: fadeIn 360ms ease-out 120ms forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+            from { opacity: 0; }
+        }
+
+        /* About Section with Photo */
+        .about {
+            background-color: var(--porcelain);
+        }
+
+        .about-content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            margin-top: 48px;
+        }
+
+        .about-photo {
+            width: 100%;
+            height: 480px;
+            background: #FDFCFB;
+            border-radius: 12px;
+            border: 1px solid rgba(200, 185, 166, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--warm-taupe);
+            font-weight: 400;
+            letter-spacing: 0.03em;
+        }
+
+        .about-content {
+            max-width: 62ch;
+            font-size: 17px;
+            line-height: 1.85;
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .about-content p {
+            margin-bottom: 28px;
+        }
+
+        /* Why Work With Me */
+        .why-section {
+            background-color: var(--bone);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .why-card {
+            padding: 40px 32px;
+            text-align: center;
+            border-radius: 12px;
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 220ms ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-2px);
+            outline: 1px solid var(--champagne);
+        }
+
+        .why-icon {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .why-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--champagne);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .why-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .why-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--porcelain);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.08);
+            transition: all 220ms ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-2px);
+            outline: 1px solid var(--champagne);
+            outline-offset: 0px;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            font-size: 48px;
+            line-height: 1;
+            color: var(--champagne);
+            font-family: 'Playfair Display', serif;
+            opacity: 0.3;
+        }
+
+        .testimonial-quote {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+            color: var(--text-primary);
+            font-weight: 400;
+            padding-left: 24px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-style: normal;
+            padding-left: 24px;
+        }
+
+        /* Neighborhoods */
+        .neighborhoods {
+            background-color: var(--bone);
+        }
+
+        .neighborhoods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .neighborhood-card {
+            text-align: center;
+            padding: 48px 32px;
+            border-radius: 12px;
+            transition: all 220ms ease;
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .neighborhood-card:hover {
+            transform: translateY(-2px);
+            outline: 1px solid var(--champagne);
+            outline-offset: 0px;
+        }
+
+        .neighborhood-name {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .neighborhood-desc {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Social Media Section */
+        .social-section {
+            background-color: var(--porcelain);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 32px 0 48px;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--warm-taupe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 220ms ease;
+        }
+
+        .social-icon:hover {
+            background: var(--black-luxe);
+            border-color: var(--black-luxe);
+            transform: translateY(-2px);
+        }
+
+        .social-icon:hover svg {
+            stroke: var(--white);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            transition: stroke 220ms ease;
+        }
+
+        .instagram-scroll-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 8px 0;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--champagne) var(--bone);
+        }
+
+        .instagram-scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .instagram-scroll-container::-webkit-scrollbar-track {
+            background: var(--bone);
+            border-radius: 3px;
+        }
+
+        .instagram-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--champagne);
+            border-radius: 3px;
+        }
+
+        .instagram-grid {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            padding: 0 48px;
+        }
+
+        .instagram-post {
+            width: 280px;
+            height: 280px;
+            background: var(--bone);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--warm-taupe);
+            font-size: 13px;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 220ms ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .instagram-post::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212, 194, 158, 0.1), rgba(200, 185, 166, 0.1));
+            opacity: 0;
+            transition: opacity 220ms ease;
+        }
+
+        .instagram-post:hover::after {
+            opacity: 1;
+        }
+
+        .instagram-post:hover {
+            transform: translateY(-2px);
+            border-color: var(--champagne);
+        }
+
+        .instagram-post svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--champagne);
+            margin-bottom: 12px;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background-color: var(--bone);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 48px auto 0;
+            background: var(--white);
+            padding: 48px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--warm-taupe);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: var(--text-primary);
+            background: var(--white);
+            transition: all 220ms ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: 1.5px solid var(--champagne);
+            outline-offset: 0px;
+            border-color: var(--champagne);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--black-luxe);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 220ms ease;
+            position: relative;
+        }
+
+        .form-submit::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            right: 50%;
+            height: 1px;
+            background: var(--champagne);
+            transition: all 220ms ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-1px);
+        }
+
+        .form-submit:hover::after {
+            left: 48px;
+            right: 48px;
+        }
+
+        /* CTA Strip */
+        .cta-strip {
+            background-color: var(--porcelain);
+            padding: 80px 48px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-strip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 48px;
+            right: 48px;
+            height: 1px;
+            background: rgba(0,0,0,0.08);
+        }
+
+        .cta-strip h2 {
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            margin-bottom: 16px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-strip p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black-luxe);
+            color: var(--warm-taupe);
+            padding: 64px 48px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 48px;
+            right: 48px;
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-contact {
+            margin-bottom: 32px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-contact a {
+            color: var(--warm-taupe);
+            text-decoration: none;
+            transition: color 220ms ease;
+            position: relative;
+        }
+
+        .footer-contact a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            right: 50%;
+            height: 1px;
+            background: var(--champagne);
+            transition: all 220ms ease;
+        }
+
+        .footer-contact a:hover::after {
+            left: 0;
+            right: 0;
+        }
+
+        .footer-contact a:hover {
+            color: var(--champagne);
+        }
+
+        .footer-contact a:focus {
+            outline: 1.5px solid var(--champagne);
+            outline-offset: 2px;
+        }
+
+        .equal-housing {
+            margin: 24px 0;
+        }
+
+        .equal-housing svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--warm-taupe);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 32px 0;
+        }
+
+        .footer-bottom {
+            font-size: 12px;
+            opacity: 0.8;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-bottom p {
+            margin: 8px 0;
+        }
+
+        .footer-trademark {
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin: 16px 0;
+            font-variant: small-caps;
+        }
+
+        /* Floating CTA Button */
+        .floating-cta {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 999;
+            background: var(--black-luxe);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 220ms ease;
+            letter-spacing: 0.01em;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        .floating-cta:focus {
+            outline: 1.5px solid var(--champagne);
+            outline-offset: 2px;
+        }
+
+        /* Calendly Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 220ms ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 24px 32px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: background 220ms ease;
+        }
+
+        .modal-close:hover {
+            background: var(--bone);
+        }
+
+        .modal-close:focus {
+            outline: 1.5px solid var(--champagne);
+            outline-offset: 2px;
+        }
+
+        .modal-body {
+            height: 600px;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .header-social {
+                right: 120px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 56px 32px 40px;
+                gap: 40px;
+            }
+
+            .hero-image {
+                height: 380px;
+                order: -1;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .about-content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-photo {
+                height: 380px;
+            }
+
+            section {
+                padding: 64px 32px;
+            }
+
+            .contact-form {
+                padding: 32px;
+            }
+
+            .instagram-grid {
+                padding: 0 32px;
+            }
+
+            .instagram-post {
+                width: 240px;
+                height: 240px;
+            }
+
+            .floating-cta {
+                bottom: 24px;
+                right: 24px;
+                font-size: 12px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-social {
+                top: 60px;
+                right: 12px;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .header-social-icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .hero {
+                padding: 56px 24px 32px;
+            }
+
+            .hero-image {
+                height: 320px;
+            }
+
+            section {
+                padding: 56px 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .lang-toggle {
+                top: 12px;
+                right: 12px;
+                padding: 6px 14px;
+                font-size: 11px;
+            }
+
+            .about-content {
+                font-size: 16px;
+            }
+
+            .contact-form {
+                padding: 28px;
+            }
+
+            .modal-body {
+                height: 500px;
+            }
+
+            .floating-cta {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .instagram-grid {
+                padding: 0 24px;
+            }
+
+            .instagram-post {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Hidden language content */
+        [data-lang="es"] {
+            display: none;
+        }
+
+        body.lang-es [data-lang="en"] {
+            display: none;
+        }
+
+        body.lang-es [data-lang="es"] {
+            display: block;
+        }
+
+        body.lang-es [data-lang="es"].inline {
+            display: inline;
+        }
+
+        [data-lang="en"].inline,
+        [data-lang="es"].inline {
+            display: inline;
+        }
+
+        /* Staggered animations */
+        .testimonial-card,
+        .neighborhood-card,
+        .why-card {
+            animation: fadeInUp 360ms ease-out forwards;
+            opacity: 0;
+        }
+
+        .testimonial-card:nth-child(1),
+        .neighborhood-card:nth-child(1),
+        .why-card:nth-child(1) {
+            animation-delay: 60ms;
+        }
+
+        .testimonial-card:nth-child(2),
+        .neighborhood-card:nth-child(2),
+        .why-card:nth-child(2) {
+            animation-delay: 120ms;
+        }
+
+        .testimonial-card:nth-child(3),
+        .neighborhood-card:nth-child(3),
+        .why-card:nth-child(3) {
+            animation-delay: 180ms;
+        }
+
+        section.visible .testimonial-card,
+        section.visible .neighborhood-card,
+        section.visible .why-card {
+            animation-play-state: running;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Social Icons -->
+    <div class="header-social">
+        <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="header-social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        <a href="https://www.facebook.com/share/1BY99wUzeB/?mibextid=wwXIfr" target="_blank" class="header-social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button onclick="switchLanguage('en')" class="active" id="lang-en">English</button>
+        <span>|</span>
+        <button onclick="switchLanguage('es')" id="lang-es">Español</button>
+    </div>
+
+    <!-- Floating CTA -->
+    <button class="floating-cta" onclick="scrollToContact()" data-lang="en">Contact Me</button>
+    <button class="floating-cta" onclick="scrollToContact()" data-lang="es">Contáctame</button>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image">
+            <div class="hero-image-text" data-lang="en">Let's work together</div>
+            <div class="hero-image-text" data-lang="es">Trabajemos juntos</div>
+            <div class="hero-image-subtext" data-lang="en">Your Professional Photo Here</div>
+            <div class="hero-image-subtext" data-lang="es">Tu Foto Profesional Aquí</div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="serif" data-lang="en">Luxury is peace, clarity, and legacy.</h1>
+            <h1 class="serif" data-lang="es">El lujo es paz, claridad y legado.</h1>
+            
+            <p class="tagline">Wealth Begins at Home™</p>
+            
+            <div class="hero-intro">
+                <p data-lang="en">I'm Anai Morales — a first-generation Mexican-American Realtor® guiding families to build generational wealth with confidence, dignity, and clarity.</p>
+                <p data-lang="es">Soy Anai Morales — una agente de bienes raíces mexicana-americana de primera generación que guía a las familias a construir riqueza generacional con confianza, dignidad y claridad.</p>
+            </div>
+
+            <div class="hero-welcome">
+                <p data-lang="en">Welcome. I'm here to guide you home—with clarity, confidence, and care.</p>
+                <p data-lang="es">Bienvenido. Estoy aquí para guiarte a casa—con claridad, confianza y cuidado.</p>
+            </div>
+
+            <div class="brand-signal">
+                <p data-lang="en">Licensed Illinois Realtor® specializing in first-generation buyers, bilingual representation, and precision guidance across Chicago's luxury and heritage neighborhoods.</p>
+                <p data-lang="es">Agente de Bienes Raíces Licenciada en Illinois, especializada en compradores de primera generación, representación bilingüe y orientación precisa en los barrios de lujo y patrimonio de Chicago.</p>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="tel:3125231978" class="btn btn-primary">
+                    <span data-lang="en">Call</span>
+                    <span data-lang="es">Llamar</span>
+                </a>
+                <a href="sms:3125231978?&body=Hi%20Anai%2C%20I'd%20love%20guidance%20on%20my%20home%20journey.%20When%20can%20we%20connect%3F" class="btn btn-secondary" data-lang="en">
+                    Text Me
+                </a>
+                <a href="sms:3125231978?&body=Hola%20Anai%2C%20quiero%20orientaci%C3%B3n%20para%20comprar%20casa.%20%C2%BFCu%C3%A1ndo%20podemos%20hablar%3F" class="btn btn-secondary" data-lang="es">
+                    Enviar Mensaje
+                </a>
+                <button onclick="openModal()" class="btn btn-primary">
+                    <span data-lang="en">Schedule Consultation</span>
+                    <span data-lang="es">Agendar Consulta</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Photo -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title serif" data-lang="en">Rooted in Heritage. Rising in Luxury.</h2>
+            <h2 class="section-title serif" data-lang="es">Arraigada en la Herencia. Elevándose en el Lujo.</h2>
+            
+            <div class="about-content-wrapper">
+                <div class="about-photo">
+                    <span data-lang="en">Anai's Photo Here</span>
+                    <span data-lang="es">Foto de Anai Aquí</span>
+                </div>
+                
+                <div class="about-content">
+                    <p data-lang="en">
+                        As a first-generation Mexican-American, I understand what it means to dream beyond what you've been given. I grew up watching my family work tirelessly to build a foundation, knowing that homeownership was the key to something greater — stability, pride, and legacy.
+                    </p>
+                    <p data-lang="es">
+                        Como mexicana-americana de primera generación, entiendo lo que significa soñar más allá de lo que te han dado. Crecí viendo a mi familia trabajar incansablemente para construir una base, sabiendo que ser propietario de una vivienda era la clave para algo más grande: estabilidad, orgullo y legado.
+                    </p>
+
+                    <p data-lang="en">
+                        Today, I guide families through one of the most important decisions of their lives with the same values I was raised with: respect, service, and unwavering dedication. Whether you're a first-time buyer or building your portfolio, I'm here to ensure you move with clarity and confidence.
+                    </p>
+                    <p data-lang="es">
+                        Hoy, guío a las familias a través de una de las decisiones más importantes de sus vidas con los mismos valores con los que fui criada: respeto, servicio y dedicación inquebrantable. Ya sea que seas comprador por primera vez o estés construyendo tu portafolio, estoy aquí para asegurarte que avances con claridad y confianza.
+                    </p>
+
+                    <p data-lang="en">
+                        Because wealth doesn't begin with money. It begins at home.
+                    </p>
+                    <p data-lang="es">
+                        Porque la riqueza no comienza con el dinero. Comienza en casa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Me Section -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title serif" data-lang="en">Why Work With Me</h2>
+            <h2 class="section-title serif" data-lang="es">Por Qué Trabajar Conmigo</h2>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h3 data-lang="en">First-Gen Expertise</h3>
+                    <h3 data-lang="es">Experiencia de Primera Generación</h3>
+                    <p data-lang="en">I understand the unique challenges and dreams of first-generation buyers building wealth for their families.</p>
+                    <p data-lang="es">Entiendo los desafíos únicos y los sueños de los compradores de primera generación que construyen riqueza para sus familias.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 data-lang="en">Bilingual Service</h3>
+                    <h3 data-lang="es">Servicio Bilingüe</h3>
+                    <p data-lang="en">Seamless communication in English and Spanish, ensuring you and your family feel heard and supported.</p>
+                    <p data-lang="es">Comunicación fluida en inglés y español, asegurando que tú y tu familia se sientan escuchados y apoyados.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 data-lang="en">Luxury Standards</h3>
+                    <h3 data-lang="es">Estándares de Lujo</h3>
+                    <p data-lang="en">White-glove service, precision guidance, and attention to every detail of your home journey.</p>
+                    <p data-lang="es">Servicio de guante blanco, orientación precisa y atención a cada detalle de tu viaje de compra de casa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title serif" data-lang="en">What Clients Say</h2>
+            <h2 class="section-title serif" data-lang="es">Lo Que Dicen Los Clientes</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote" data-lang="en">Anai went above and beyond for me — highly recommended.</p>
+                    <p class="testimonial-quote" data-lang="es">Anai fue más allá por mí — altamente recomendada.</p>
+                    <p class="testimonial-author">— David A.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote" data-lang="en">I switched from another agent who wasn't listening. In less than two months I became a homeowner thanks to Anai.</p>
+                    <p class="testimonial-quote" data-lang="es">Cambié de otro agente que no escuchaba. En menos de dos meses me convertí en propietaria gracias a Anai.</p>
+                    <p class="testimonial-author">— Asti B.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neighborhoods Section -->
+    <section class="neighborhoods">
+        <div class="container">
+            <h2 class="section-title serif" data-lang="en">Live Where You Thrive</h2>
+            <h2 class="section-title serif" data-lang="es">Vive Donde Prosperas</h2>
+            
+            <div class="neighborhoods-grid">
+                <div class="neighborhood-card">
+                    <h3 class="neighborhood-name serif">River North</h3>
+                    <p class="neighborhood-desc" data-lang="en">Modern sophistication meets urban luxury living.</p>
+                    <p class="neighborhood-desc" data-lang="es">La sofisticación moderna se encuentra con la vida de lujo urbano.</p>
+                </div>
+
+                <div class="neighborhood-card">
+                    <h3 class="neighborhood-name serif">Pilsen</h3>
+                    <p class="neighborhood-desc" data-lang="en">Culture, art, and community pride in every corner.</p>
+                    <p class="neighborhood-desc" data-lang="es">Cultura, arte y orgullo comunitario en cada esquina.</p>
+                </div>
+
+                <div class="neighborhood-card">
+                    <h3 class="neighborhood-name serif">Bronzeville</h3>
+                    <p class="neighborhood-desc" data-lang="en">Legacy, elegance, and future-minded wealth building.</p>
+                    <p class="neighborhood-desc" data-lang="es">Legado, elegancia y construcción de riqueza con visión de futuro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section">
+        <div class="container">
+            <h2 class="section-title serif" data-lang="en">Follow the Journey</h2>
+            <h2 class="section-title serif" data-lang="es">Sigue el Viaje</h2>
+            
+            <div class="social-icons">
+                <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="social-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/share/1BY99wUzeB/?mibextid=wwXIfr" target="_blank" class="social-icon" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="instagram-scroll-container">
+                <div class="instagram-grid">
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title serif" data-lang="en">Let's Connect</h2>
+            <h2 class="section-title serif" data-lang="es">Conectemos</h2>
+            
+            <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label><span data-lang="en">Name</span><span data-lang="es">Nombre</span></label>
+                    <input type="text" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label><span data-lang="en">Email</span><span data-lang="es">Correo Electrónico</span></label>
+                    <input type="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label><span data-lang="en">Phone</span><span data-lang="es">Teléfono</span></label>
+                    <input type="tel" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label><span data-lang="en">I'm interested in...</span><span data-lang="es">Estoy interesado en...</span></label>
+                    <select name="interest" required data-lang="en">
+                        <option value="">Select an option</option>
+                        <option value="buy">Buying a home</option>
+                        <option value="sell">Selling a home</option>
+                        <option value="rent">Renting</option>
+                        <option value="exploring">Just exploring</option>
+                    </select>
+                    <select name="interest" required data-lang="es">
+                        <option value="">Selecciona una opción</option>
+                        <option value="buy">Comprar una casa</option>
+                        <option value="sell">Vender una casa</option>
+                        <option value="rent">Rentar</option>
+                        <option value="exploring">Solo explorando</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="form-submit">
+                    <span data-lang="en">Send Message</span>
+                    <span data-lang="es">Enviar Mensaje</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="cta-strip">
+        <div class="container">
+            <h2 class="serif" data-lang="en">Your future starts with a conversation.</h2>
+            <h2 class="serif" data-lang="es">Tu futuro comienza con una conversación.</h2>
+            
+            <p data-lang="en">Begin your journey today.</p>
+            <p data-lang="es">Comienza tu viaje hoy.</p>
+
+            <div class="cta-buttons">
+                <a href="tel:3125231978" class="btn btn-primary">
+                    <span data-lang="en">Call</span>
+                    <span data-lang="es">Llamar</span>
+                </a>
+                <a href="sms:3125231978?&body=Hi%20Anai%2C%20I'd%20love%20guidance%20on%20my%20home%20journey.%20When%20can%20we%20connect%3F" class="btn btn-secondary" data-lang="en">
+                    Text Me
+                </a>
+                <a href="sms:3125231978?&body=Hola%20Anai%2C%20quiero%20orientaci%C3%B3n%20para%20comprar%20casa.%20%C2%BFCu%C3%A1ndo%20podemos%20hablar%3F" class="btn btn-secondary" data-lang="es">
+                    Enviar Mensaje
+                </a>
+                <button onclick="openModal()" class="btn btn-primary">
+                    <span data-lang="en">Schedule Consultation</span>
+                    <span data-lang="es">Agendar Consulta</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p><strong>Anai Morales</strong></p>
+                <p>
+                    <span data-lang="en">Luxury Realtor®</span>
+                    <span data-lang="es">Agente de Bienes Raíces de Lujo</span>
+                </p>
+                <p><a href="tel:3125231978">312-523-1978</a></p>
+                <p><a href="mailto:anaitherealtor@gmail.com">anaitherealtor@gmail.com</a></p>
+            </div>
+
+            <div class="equal-housing">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="footer-trademark">Wealth Begins at Home™</p>
+                <p>English | Español</p>
+                <p>&copy; 2025 Anai Morales. <span data-lang="en">All rights reserved.</span><span data-lang="es">Todos los derechos reservados.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calendly Modal -->
+    <div class="modal" id="calendlyModal" onclick="closeModalOnBackdrop(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="serif" data-lang="en">Schedule Your Consultation</h3>
+                <h3 class="serif" data-lang="es">Agendar Tu Consulta</h3>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe src="https://calendly.com/anaitheRealtor" frameborder="0" title="Schedule Consultation"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language switching
+        function switchLanguage(lang) {
+            const body = document.body;
+            const enBtn = document.getElementById('lang-en');
+            const esBtn = document.getElementById('lang-es');
+
+            if (lang === 'es') {
+                body.classList.add('lang-es');
+                enBtn.classList.remove('active');
+                esBtn.classList.add('active');
+                localStorage.setItem('preferredLanguage', 'es');
+            } else {
+                body.classList.remove('lang-es');
+                enBtn.classList.add('active');
+                esBtn.classList.remove('active');
+                localStorage.setItem('preferredLanguage', 'en');
+            }
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang === 'es') {
+                switchLanguage('es');
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section:not(.hero)').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Modal functions
+        function openModal() {
+            const modal = document.getElementById('calendlyModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('calendlyModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnBackdrop(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Scroll to contact function
+        function scrollToContact() {
+            const contactSection = document.getElementById('contact');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Create mailto link with form data
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const interest = formData.get('interest');
+            
+            const subject = 'New Contact Form Submission';
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0AInterest: ${interest}`;
+            
+            window.location.href = `mailto:anaitherealtor@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Reset form
+            form.reset();
+        }
+
+        // Mobile fallback for Calendly
+        if (window.innerWidth < 768) {
+            document.querySelectorAll('button[onclick="openModal()"]').forEach(button => {
+                button.onclick = (e) => {
+                    e.preventDefault();
+                    window.open('https://calendly.com/anaitheRealtor', '_blank');
+                };
+            });
+        }
+    </script>
+</body>
+</html>
