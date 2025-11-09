@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anai Morales | Chicago Realtor® | Wealth Begins at Home™</title>
+    <meta name="description" content="First-generation Mexican-American Realtor® serving Chicago. Bilingual guidance for buyers, sellers, and investors. Clear process, patient support.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #2a2a2a;
+            --cream: #F3EFEA;
+            --dark-cream: #E8E3DD;
+            --taupe: #C8B9A6;
+            --champagne: #D4C29E;
+            --white: #FFFFFF;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 32px;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 12px 32px;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--taupe);
+        }
+
+        .lang-toggle {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 14px;
+            margin-left: 16px;
+        }
+
+        .lang-toggle button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 14px;
+            padding: 4px 8px;
+            transition: color 0.2s;
+        }
+
+        .lang-toggle button.active {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* Hero */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 32px 80px;
+            background: var(--cream);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 600;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subline {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--charcoal);
+            border: 2px solid var(--taupe);
+        }
+
+        .btn-secondary:hover {
+            background: var(--taupe);
+            border-color: var(--taupe);
+        }
+
+        /* Section Base */
+        section {
+            padding: 80px 32px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* About */
+        #about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--dark-cream);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--taupe);
+            font-size: 14px;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        /* Pillars */
+        #pillars {
+            background: var(--cream);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .pillar-card {
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.2s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .pillar-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 20px;
+            stroke: var(--champagne);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .pillar-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Process */
+        #process {
+            background: var(--white);
+        }
+
+        .process-toggle {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .process-toggle button {
+            padding: 12px 32px;
+            border-radius: 8px;
+            border: 2px solid var(--taupe);
+            background: transparent;
+            color: var(--charcoal);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .process-toggle button.active {
+            background: var(--charcoal);
+            color: var(--white);
+            border-color: var(--charcoal);
+        }
+
+        .process-content {
+            display: none;
+        }
+
+        .process-content.active {
+            display: block;
+        }
+
+        .process-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 32px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 80px;
+            bottom: -48px;
+            width: 2px;
+            background: var(--taupe);
+            opacity: 0.3;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .process-step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .process-step-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Reviews Carousel */
+        #reviews {
+            background: var(--cream);
+        }
+
+        .reviews-carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 0 48px;
+        }
+
+        .reviews-carousel {
+            display: flex;
+            gap: 32px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 8px 0;
+        }
+
+        .reviews-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 48px 40px;
+            border-radius: 12px;
+            min-width: 450px;
+            flex-shrink: 0;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .review-quote {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--champagne);
+        }
+
+        .carousel-nav {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--taupe);
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--charcoal);
+        }
+
+        .carousel-btn:hover {
+            background: var(--charcoal);
+            color: var(--white);
+            border-color: var(--charcoal);
+        }
+
+        /* Office Locations */
+        #locations {
+            background: var(--white);
+        }
+
+        .locations-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .location-card {
+            background: var(--cream);
+            padding: 32px 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .location-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .location-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Social Media */
+        #social {
+            background: var(--cream);
+        }
+
+        .social-icons-center {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 32px 0 48px;
+        }
+
+        .social-icon-large {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--taupe);
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .social-icon-large:hover {
+            background: var(--charcoal);
+            border-color: var(--charcoal);
+        }
+
+        .social-icon-large:hover svg {
+            stroke: var(--white);
+        }
+
+        .social-icon-large svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--charcoal);
+            transition: stroke 0.2s;
+        }
+
+        .instagram-scroll {
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--champagne) var(--dark-cream);
+        }
+
+        .instagram-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .instagram-scroll::-webkit-scrollbar-track {
+            background: var(--dark-cream);
+            border-radius: 3px;
+        }
+
+        .instagram-scroll::-webkit-scrollbar-thumb {
+            background: var(--champagne);
+            border-radius: 3px;
+        }
+
+        .instagram-grid {
+            display: flex;
+            gap: 16px;
+            padding: 8px 32px;
+            width: max-content;
+        }
+
+        .instagram-post {
+            width: 280px;
+            height: 280px;
+            background: var(--dark-cream);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid rgba(0,0,0,0.05);
+            flex-shrink: 0;
+        }
+
+        .instagram-post:hover {
+            transform: translateY(-2px);
+            border-color: var(--champagne);
+        }
+
+        .instagram-post svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--champagne);
+            margin-bottom: 12px;
+        }
+
+        .instagram-post span {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Contact */
+        #contact {
+            background: var(--white);
+        }
+
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--cream);
+            padding: 48px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--taupe);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            background: var(--white);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--charcoal);
+        }
+
+        .contact-ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 48px 32px 32px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-contact {
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-contact a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-housing {
+            margin: 24px 0;
+            opacity: 0.8;
+        }
+
+        .footer-housing svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+        }
+
+        .footer-bottom {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-tm {
+            font-size: 12px;
+            margin: 16px 0;
+        }
+
+        /* Floating Elements */
+        .floating-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            display: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .floating-social {
+            position: fixed;
+            bottom: 90px;
+            right: 24px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--taupe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .social-icon:hover {
+            background: var(--charcoal);
+            border-color: var(--charcoal);
+            transform: translateY(-2px);
+        }
+
+        .social-icon:hover svg {
+            stroke: var(--white);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--charcoal);
+            transition: stroke 0.2s;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--taupe);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            height: 600px;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Hidden Content */
+        [data-lang="es"] {
+            display: none;
+        }
+
+        body.lang-es [data-lang="en"] {
+            display: none;
+        }
+
+        body.lang-es [data-lang="es"] {
+            display: block;
+        }
+
+        body.lang-es [data-lang="es"].inline {
+            display: inline;
+        }
+
+        [data-lang="en"].inline,
+        [data-lang="es"].inline {
+            display: inline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .hero-ctas,
+            .contact-ctas {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .process-step {
+                grid-template-columns: 60px 1fr;
+                gap: 24px;
+            }
+
+            .process-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.25rem;
+            }
+
+            .process-step:not(:last-child)::after {
+                left: 30px;
+                top: 60px;
+            }
+
+            .process-toggle {
+                flex-direction: column;
+            }
+
+            .process-toggle button {
+                width: 100%;
+            }
+
+            /* Mobile testimonials - stack vertically */
+            .reviews-carousel-container {
+                padding: 0 24px;
+            }
+
+            .reviews-carousel {
+                flex-direction: column;
+                overflow-x: visible;
+                gap: 24px;
+            }
+
+            .review-card {
+                min-width: 100%;
+                width: 100%;
+            }
+
+            .carousel-nav {
+                display: none;
+            }
+
+            .instagram-grid {
+                padding: 8px 24px;
+            }
+
+            .instagram-post {
+                width: 220px;
+                height: 220px;
+            }
+
+            .contact-form {
+                padding: 32px 24px;
+            }
+
+            .floating-btn {
+                display: block;
+            }
+
+            .modal-body {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <a href="#hero" class="logo">Anai Morales</a>
+            <nav>
+                <a href="#about" data-lang="en">About</a>
+                <a href="#about" data-lang="es">Acerca</a>
+                <a href="#process" data-lang="en">Process</a>
+                <a href="#process" data-lang="es">Proceso</a>
+                <a href="#reviews" data-lang="en">Reviews</a>
+                <a href="#reviews" data-lang="es">Reseñas</a>
+                <a href="#locations" data-lang="en">Locations</a>
+                <a href="#locations" data-lang="es">Ubicaciones</a>
+                <a href="#contact" data-lang="en">Contact</a>
+                <a href="#contact" data-lang="es">Contacto</a>
+                <div class="lang-toggle">
+                    <button onclick="switchLanguage('en')" class="active" id="lang-en">EN</button>
+                    <span>|</span>
+                    <button onclick="switchLanguage('es')" id="lang-es">ES</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Floating Social -->
+    <div class="floating-social">
+        <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        <a href="https://www.facebook.com/share/1BY99wUzeB/?mibextid=wwXIfr" target="_blank" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Floating Contact Button (Mobile) -->
+    <a href="#contact" class="floating-btn btn btn-primary" data-lang="en">Contact</a>
+    <a href="#contact" class="floating-btn btn btn-primary" data-lang="es">Contacto</a>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1 class="serif" data-lang="en">Here to help you buy or sell</h1>
+            <h1 class="serif" data-lang="es">Aquí para ayudarte a comprar o vender</h1>
+            
+            <p class="hero-subline" data-lang="en">Chicago Realtor® serving buyers, sellers, and investors with patient, bilingual guidance through every step.</p>
+            <p class="hero-subline" data-lang="es">Agente de bienes raíces en Chicago sirviendo a compradores, vendedores e inversionistas con guía paciente y bilingüe en cada paso.</p>
+            
+            <div class="hero-ctas">
+                <a href="tel:3125231978" class="btn btn-primary">
+                    <span data-lang="en">Call</span>
+                    <span data-lang="es">Llamar</span>
+                </a>
+                <a href="sms:3125231978?&body=Hi%20Anai!%20I'd%20love%20guidance%20on%20my%20home%20journey.%20When%20can%20we%20connect%3F" class="btn btn-secondary" data-lang="en">Text</a>
+                <a href="sms:3125231978?&body=Hola%20Anai%2C%20quiero%20orientaci%C3%B3n%20para%20comprar%20casa.%20%C2%BFCu%C3%A1ndo%20podemos%20hablar%3F" class="btn btn-secondary" data-lang="es">Enviar Mensaje</a>
+                <button onclick="openModal()" class="btn btn-primary">
+                    <span data-lang="en">Schedule</span>
+                    <span data-lang="es">Agendar</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-photo">
+                    <span data-lang="en">Professional Photo</span>
+                    <span data-lang="es">Foto Profesional</span>
+                </div>
+                <div class="about-text">
+                    <div data-lang="en">
+                        <p>As a first-generation Mexican-American, I understand what it means to dream beyond what you've been given. I grew up watching my family work tirelessly to build a foundation, knowing that homeownership was the key to something greater—stability, pride, and legacy.</p>
+                        <p>Today, I guide families through one of the most important decisions of their lives with the same values I was raised with: respect, service, and unwavering dedication. Whether you're a first-time buyer or building your portfolio, I'm here to ensure you move with clarity and confidence.</p>
+                        <p><strong>Wealth Begins at Home™</strong></p>
+                    </div>
+                    <div data-lang="es">
+                        <p>Como mexicana-americana de primera generación, entiendo lo que significa soñar más allá de lo que te han dado. Crecí viendo a mi familia trabajar incansablemente para construir una base, sabiendo que ser propietario de una vivienda era la clave para algo más grande: estabilidad, orgullo y legado.</p>
+                        <p>Hoy, guío a las familias a través de una de las decisiones más importantes de sus vidas con los mismos valores con los que fui criada: respeto, servicio y dedicación inquebrantable. Ya sea que seas comprador por primera vez o estés construyendo tu portafolio, estoy aquí para asegurarte que avances con claridad y confianza.</p>
+                        <p><strong>La Riqueza Comienza en Casa™</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars -->
+    <section id="pillars">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif" data-lang="en">Why Work With Me</h2>
+                <h2 class="serif" data-lang="es">Por Qué Trabajar Conmigo</h2>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <h3 data-lang="en">First-Gen Guidance</h3>
+                    <h3 data-lang="es">Guía de Primera Generación</h3>
+                    <p data-lang="en">I understand the unique challenges and dreams of first-generation buyers building wealth.</p>
+                    <p data-lang="es">Entiendo los desafíos únicos y los sueños de los compradores de primera generación.</p>
+                </div>
+                <div class="pillar-card">
+                    <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <h3 data-lang="en">Bilingual Representation</h3>
+                    <h3 data-lang="es">Representación Bilingüe</h3>
+                    <p data-lang="en">Seamless communication in English and Spanish for you and your family.</p>
+                    <p data-lang="es">Comunicación fluida en inglés y español para ti y tu familia.</p>
+                </div>
+                <div class="pillar-card">
+                    <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                    </svg>
+                    <h3 data-lang="en">Clear Process</h3>
+                    <h3 data-lang="es">Proceso Claro</h3>
+                    <p data-lang="en">Step-by-step support with no confusion, just confidence.</p>
+                    <p data-lang="es">Apoyo paso a paso sin confusión, solo confianza.</p>
+                </div>
+                <div class="pillar-card">
+                    <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <h3 data-lang="en">Trusted Network</h3>
+                    <h3 data-lang="es">Red de Confianza</h3>
+                    <p data-lang="en">Access to vetted lenders, inspectors, and attorneys who respect your goals.</p>
+                    <p data-lang="es">Acceso a prestamistas, inspectores y abogados que respetan tus objetivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif" data-lang="en">How We Work Together</h2>
+                <h2 class="serif" data-lang="es">Cómo Trabajamos Juntos</h2>
+            </div>
+            
+            <div class="process-toggle">
+                <button onclick="showProcess('buyers')" class="active" id="buyers-btn">
+                    <span data-lang="en">For Buyers</span>
+                    <span data-lang="es">Para Compradores</span>
+                </button>
+                <button onclick="showProcess('sellers')" id="sellers-btn">
+                    <span data-lang="en">For Sellers</span>
+                    <span data-lang="es">Para Vendedores</span>
+                </button>
+            </div>
+
+            <!-- Buyers Process -->
+            <div class="process-content active" id="buyers-process">
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <div class="process-step-content">
+                            <h3 class="serif" data-lang="en">Discover</h3>
+                            <h3 class="serif" data-lang="es">Descubrir</h3>
+                            <p data-lang="en">We start with a conversation about your goals, timeline, and budget. No pressure, just clarity.</p>
+                            <p data-lang="es">Comenzamos con una conversación sobre tus objetivos, cronograma y presupuesto. Sin presión, solo claridad.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <div class="process-step-content">
+                            <h3 class="serif" data-lang="en">Tour</h3>
+                            <h3 class="serif" data-lang="es">Recorrer</h3>
+                            <p data-lang="en">I'll guide you through homes that fit your needs, answering every question along the way.</p>
+                            <p data-lang="es">Te guiaré a través de casas que se ajusten a tus necesidades, respondiendo cada pregunta en el camino.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <div class="process-step-content">
+                            <h3 class="serif" data-lang="en">Offer</h3>
+                            <h3 class="serif" data-lang="es">Ofrecer</h3>
+                            <p data-lang="en">We craft a competitive offer and negotiate on your behalf with precision and respect.</p>
+                            <p data-lang="es">Elaboramos una oferta competitiva y negociamos en tu nombre con precisión y respeto.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <div class="process-step-content">
+                            <h3 class="serif" data-lang="en">Close</h3>
+                            <h3 class="serif" data-lang="es">Cerrar</h3>
+                            <p data-lang="en">I'll walk you through inspections, financing, and closing so you feel confident every step.</p>
+                            <p data-lang="es">Te guiaré a través de inspecciones, financiamiento y cierre para que te sientas seguro en cada paso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sellers Process -->
+            <div class="process-content" id="sellers-process">
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <div class="process-step-content">
+                            <h3 class="serif" data-lang="en">Consultation</h3>
+                            <h3 class="serif" data-lang="es">Consulta</h3>
+                            <p data-lang="en">We'll review your home, discuss market conditions, and set a strategic pricing plan.</p>
+                            <p data-lang="es">Revisaremos tu casa, discutiremos las condiciones del mercado y estableceremos un plan de precios estratégico.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <div class="process-step-content">
+                            <h3 class="serif" data-lang="en">Prepare</h3>
+                            <h3 class="serif" data-lang="es">Preparar</h3>
+                            <p data-lang="en">I'll guide you on staging, repairs, and improvements to maximize your home's appeal.</p>
+                            <p data-lang="es">Te guiaré sobre la puesta en escena, reparaciones y mejoras para maximizar el atractivo de tu casa.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <div class="process-step-content">
+                            <h3 class="serif" data-lang="en">Market</h3>
+                            <h3 class="serif" data-lang="es">Comercializar</h3>
+                            <p data-lang="en">Professional photos, targeted marketing, and open houses to attract qualified buyers.</p>
+                            <p data-lang="es">Fotos profesionales, marketing dirigido y casas abiertas para atraer compradores calificados.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <div class="process-step-content">
+                            <h3 class="serif" data-lang="en">Negotiate</h3>
+                            <h3 class="serif" data-lang="es">Negociar</h3>
+                            <p data-lang="en">I'll review all offers with you and negotiate the best terms for your goals.</p>
+                            <p data-lang="es">Revisaré todas las ofertas contigo y negociaré los mejores términos para tus objetivos.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <div class="process-step-content">
+                            <h3 class="serif" data-lang="en">Close</h3>
+                            <h3 class="serif" data-lang="es">Cerrar</h3>
+                            <p data-lang="en">I'll manage inspections, appraisals, and paperwork to ensure a smooth closing.</p>
+                            <p data-lang="es">Gestionaré inspecciones, tasaciones y papeleo para asegurar un cierre sin problemas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Carousel -->
+    <section id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif" data-lang="en">What Clients Say</h2>
+                <h2 class="serif" data-lang="es">Lo Que Dicen Los Clientes</h2>
+            </div>
+            <div class="reviews-carousel-container">
+                <div class="reviews-carousel" id="reviewsCarousel">
+                    <div class="review-card">
+                        <p class="review-quote" data-lang="en">"Anai went above and beyond—highly recommended."</p>
+                        <p class="review-quote" data-lang="es">"Anai fue más allá—altamente recomendada."</p>
+                        <p class="review-author">— David A.</p>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-quote" data-lang="en">"Switched from an agent who wasn't listening; in under two months I became a homeowner with Anai."</p>
+                        <p class="review-quote" data-lang="es">"Cambié de un agente que no escuchaba; en menos de dos meses me convertí en propietaria con Anai."</p>
+                        <p class="review-author">— Asti B.</p>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-quote" data-lang="en">"I'm so grateful to have been recommended to Anai. She really took the time to make sure my family and I were comfortable with everything. From the initial consultation, touring homes, submitting an offer, all the way to the closing table."</p>
+                        <p class="review-quote" data-lang="es">"Estoy muy agradecida de que me hayan recomendado a Anai. Realmente se tomó el tiempo para asegurarse de que mi familia y yo estuviéramos cómodos con todo. Desde la consulta inicial, recorriendo casas, presentando una oferta, hasta la mesa de cierre."</p>
+                        <p class="review-author">— Maria Rodriguez</p>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="scrollCarousel('left')" aria-label="Previous">‹</button>
+                    <button class="carousel-btn" onclick="scrollCarousel('right')" aria-label="Next">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations -->
+    <section id="locations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif" data-lang="en">Office Locations</h2>
+                <h2 class="serif" data-lang="es">Ubicaciones de Oficina</h2>
+                <p data-lang="en">Serving Chicago and surrounding areas</p>
+                <p data-lang="es">Sirviendo Chicago y áreas circundantes</p>
+            </div>
+            <div class="locations-list">
+                <div class="location-card">
+                    <h4 data-lang="en">North Side Office</h4>
+                    <h4 data-lang="es">Oficina Lado Norte</h4>
+                    <p>4215 W Fullerton Ave<br>Chicago, IL 60639</p>
+                </div>
+                <div class="location-card">
+                    <h4 data-lang="en">South Side Office</h4>
+                    <h4 data-lang="es">Oficina Lado Sur</h4>
+                    <p>3958 W 63rd St<br>Chicago, IL</p>
+                </div>
+                <div class="location-card">
+                    <h4 data-lang="en">Berwyn Office</h4>
+                    <h4 data-lang="es">Oficina Berwyn</h4>
+                    <p>6507 Cermak Rd<br>Berwyn, IL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section id="social">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif" data-lang="en">Follow the Journey</h2>
+                <h2 class="serif" data-lang="es">Sigue el Viaje</h2>
+            </div>
+            
+            <div class="social-icons-center">
+                <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="social-icon-large" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/share/1BY99wUzeB/?mibextid=wwXIfr" target="_blank" class="social-icon-large" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="instagram-scroll">
+                <div class="instagram-grid">
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/anaitherealtor" target="_blank" class="instagram-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span data-lang="en">View on Instagram</span>
+                        <span data-lang="es">Ver en Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif" data-lang="en">Let's Connect</h2>
+                <h2 class="serif" data-lang="es">Conectemos</h2>
+            </div>
+            <div class="contact-wrapper">
+                <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label><span data-lang="en">Name</span><span data-lang="es">Nombre</span></label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-lang="en">Email</span><span data-lang="es">Correo</span></label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-lang="en">Phone</span><span data-lang="es">Teléfono</span></label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-lang="en">I'm interested in...</span><span data-lang="es">Estoy interesado en...</span></label>
+                        <select name="interest" required data-lang="en">
+                            <option value="">Select</option>
+                            <option value="buying">Buying</option>
+                            <option value="selling">Selling</option>
+                            <option value="investing">Investing</option>
+                            <option value="exploring">Exploring</option>
+                        </select>
+                        <select name="interest" required data-lang="es">
+                            <option value="">Seleccionar</option>
+                            <option value="buying">Comprar</option>
+                            <option value="selling">Vender</option>
+                            <option value="investing">Invertir</option>
+                            <option value="exploring">Explorar</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <span data-lang="en">Send Message</span>
+                        <span data-lang="es">Enviar Mensaje</span>
+                    </button>
+                </form>
+                <div class="contact-ctas">
+                    <a href="tel:3125231978" class="btn btn-secondary">
+                        <span data-lang="en">Call</span>
+                        <span data-lang="es">Llamar</span>
+                    </a>
+                    <a href="sms:3125231978?&body=Hi%20Anai!%20I'd%20love%20guidance%20on%20my%20home%20journey.%20When%20can%20we%20connect%3F" class="btn btn-secondary" data-lang="en">Text</a>
+                    <a href="sms:3125231978?&body=Hola%20Anai%2C%20quiero%20orientaci%C3%B3n%20para%20comprar%20casa.%20%C2%BFCu%C3%A1ndo%20podemos%20hablar%3F" class="btn btn-secondary" data-lang="es">Enviar Mensaje</a>
+                    <button onclick="openModal()" class="btn btn-primary">
+                        <span data-lang="en">Schedule</span>
+                        <span data-lang="es">Agendar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p><strong>Anai Morales</strong></p>
+                <p data-lang="en">Professional Realtor® | Chicago, IL</p>
+                <p data-lang="es">Agente de Bienes Raíces Profesional | Chicago, IL</p>
+                <p><a href="tel:3125231978">312-523-1978</a></p>
+                <p><a href="mailto:anaitherealtor@gmail.com">anaitherealtor@gmail.com</a></p>
+                <p><a href="https://www.instagram.com/anaitherealtor" target="_blank">@anaitherealtor</a></p>
+            </div>
+            <div class="footer-housing">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <p style="margin-top: 8px; font-size: 12px;">Equal Housing Opportunity</p>
+            </div>
+            <p class="footer-tm">Wealth Begins at Home™</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anai Morales. <span data-lang="en">All rights reserved.</span><span data-lang="es">Todos los derechos reservados.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calendly Modal -->
+    <div class="modal" id="calendlyModal" onclick="closeModalOnBackdrop(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="serif" data-lang="en">Schedule Consultation</h3>
+                <h3 class="serif" data-lang="es">Agendar Consulta</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe src="https://calendly.com/anaitheRealtor" title="Schedule Consultation"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language switching
+        function switchLanguage(lang) {
+            const body = document.body;
+            const enBtn = document.getElementById('lang-en');
+            const esBtn = document.getElementById('lang-es');
+
+            if (lang === 'es') {
+                body.classList.add('lang-es');
+                enBtn.classList.remove('active');
+                esBtn.classList.add('active');
+                localStorage.setItem('preferredLanguage', 'es');
+            } else {
+                body.classList.remove('lang-es');
+                enBtn.classList.add('active');
+                esBtn.classList.remove('active');
+                localStorage.setItem('preferredLanguage', 'en');
+            }
+        }
+
+        // Load saved language
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang === 'es') {
+                switchLanguage('es');
+            }
+        });
+
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Process toggle
+        function showProcess(type) {
+            const buyersBtn = document.getElementById('buyers-btn');
+            const sellersBtn = document.getElementById('sellers-btn');
+            const buyersProcess = document.getElementById('buyers-process');
+            const sellersProcess = document.getElementById('sellers-process');
+
+            if (type === 'buyers') {
+                buyersBtn.classList.add('active');
+                sellersBtn.classList.remove('active');
+                buyersProcess.classList.add('active');
+                sellersProcess.classList.remove('active');
+            } else {
+                sellersBtn.classList.add('active');
+                buyersBtn.classList.remove('active');
+                sellersProcess.classList.add('active');
+                buyersProcess.classList.remove('active');
+            }
+        }
+
+        // Reviews carousel
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('reviewsCarousel');
+            const scrollAmount = 432; // card width + gap
+            if (direction === 'left') {
+                carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // Modal functions
+        function openModal() {
+            const modal = document.getElementById('calendlyModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('calendlyModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnBackdrop(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Mobile Calendly fallback
+        if (window.innerWidth < 768) {
+            document.querySelectorAll('button[onclick="openModal()"]').forEach(btn => {
+                btn.onclick = () => window.open('https://calendly.com/anaitheRealtor', '_blank');
+            });
+        }
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            const subject = 'New Contact Form Submission';
+            const body = `Name: ${formData.get('name')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AInterest: ${formData.get('interest')}`;
+            
+            window.location.href = `mailto:anaitherealtor@gmail.com?subject=${subject}&body=${body}`;
+            form.reset();
+        }
+    </script>
+</body>
+</html>
